@@ -1,5 +1,6 @@
 """
-Convert Zotero BibTeX export + files folder to GitHub-hosted database
+AI Written Code 
+Convert Zotero BibTeX export + files folder to GitHub
 """
 
 import json
@@ -360,63 +361,7 @@ Converted from Zotero BibTeX export on {database['info']['created']}
         percentage = (count / database['info']['total_documents']) * 100
         readme_content += f"- **{category.replace('_', ' ').title()}**: {count} documents ({percentage:.1f}%)\n"
     
-    readme_content += f"""
-
-## 🗂️ Directory Structure
-```
-/
-├── metadata/
-│   ├── library.json      # Complete searchable database
-│   ├── tags.json         # All tags from Zotero
-│   └── categories.json   # Category statistics
-├── documents/
-│   ├── journal_articles/
-│   │   ├── 2024/
-│   │   ├── 2023/
-│   │   └── ...
-│   ├── conference_papers/
-│   ├── books/
-│   ├── reports/
-│   └── theses/
-├── index.html           # Web search interface (if available)
-└── README.md
-```
-
-## 🔍 Usage
-
-### JSON Database
-The main database is in `metadata/library.json`. Each document includes:
-- Complete bibliographic information
-- All tags from Zotero
-- Category classification
-- File paths to PDFs (when available)
-- DOI and URL links
-
-### Example JSON Structure
-```json
-{{
-  "id": "author2024title",
-  "title": "Document Title",
-  "authors": "Author Name, Second Author",
-  "year": "2024",
-  "journal": "Journal Name",
-  "tags": ["tag1", "tag2"],
-  "category": "journal_articles",
-  "file_paths": ["documents/journal_articles/2024/Author_2024_Title.pdf"],
-  "has_pdf": true,
-  "doi": "10.1000/example",
-  "abstract": "Document abstract..."
-}}
-```
-
-## 📄 PDF Access
-PDFs are organized by category and year. Direct links work in GitHub:
-- `documents/journal_articles/2024/Smith_2024_Machine_Learning.pdf`
-- `documents/books/2023/Johnson_2023_Data_Science.pdf`
-
-## 🏷️ Tags
-All {database['info']['total_tags']} unique tags from your Zotero library are preserved and searchable.
-
+    readme_content += f"
 ---
 *Generated from Zotero BibTeX export • Last updated: {database['info']['created']}*
 """
