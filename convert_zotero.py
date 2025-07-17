@@ -1,5 +1,6 @@
 """
 AI Written Code 
+Claude July 2025
 Convert Zotero BibTeX export + files folder to GitHub
 """
 
